@@ -1,83 +1,79 @@
-html,
-body,
-#root,
-.App {
-  height: 100%;
-  width: 100%;
+:root {
+  --effect: hover 1s linear infinite;
 }
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-html,
-body {
-  max-width: 100vw;
-  overflow: hidden;
-}
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: grey;
-  height: 100vh;
-}
-.container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-top: 56.25%;
-}
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-    linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 0.06),
-      rgba(0, 255, 0, 0.02),
-      rgba(0, 0, 255, 0.06)
-    );
-  background-size: 100% 4px, 30px 100%;
-  z-index: 1;
-  animation: flicker 100ms infinite;
-}
-.video-overlay:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(255, 255, 255);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0) 70%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  z-index: 2;
-}
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
+*{
+   margin:0;
 }
 
-@keyframes flicker {
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #d9e3f1;
+  align-items: center;
+  justify-content: center;
+}
+
+div {
+  text-align: center;
+}
+
+p {
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 8em;
+  font-family: arial;
+  font-weight: 900;
+  transform: scale(2);
+  color: #bd0d0d;
+  -webkit-text-stroke: 8px gray;
+}
+
+p:nth-child(1) {
+  animation: var(--effect);
+}
+
+p:nth-child(2) {
+  animation: var(--effect) .125s;
+}
+
+p:nth-child(3) {
+  animation: var(--effect) .25s;
+}
+
+p:nth-child(4) {
+  animation: var(--effect) .375s;
+}
+
+p:nth-child(5) {
+  animation: var(--effect) .375s;
+}
+
+p:nth-child(6) {
+  animation: var(--effect) .5s;
+}
+
+
+@keyframes hover {
   0% {
-    transform: translateY(1px);
+    transform: scale(.5);
+    color: #121212;
+    -webkit-text-stroke: 2px gray;
   }
-  100% {
-    transform: translateY(0px);
+
+  20% {
+    transform: scale(1);
+    color: pink;
+    -webkit-text-stroke: 3px red;
+    filter: drop-shadow(0 0 1px black)drop-shadow(0 0 1px black)drop-shadow(0 0 3px red)drop-shadow(0 0 5px red)hue-rotate(10turn);
   }
+
+  50% {
+    transform: scale(.5);
+    color: #121212;
+    -webkit-text-stroke: 5px gray;
+  }
+
+
 }
